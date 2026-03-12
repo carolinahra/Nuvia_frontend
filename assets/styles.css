@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body.page-bg {
+  background-color: #e9edf7;
+  min-height: 100vh;
+}
+
+.mobile-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 105px 28px 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  max-width: 100%;
+  display: block;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #2f4f6f;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #304c6b;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d8dfea;
+  border-radius: 14px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fff;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #5a47ff;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #5a47ff, #4a3df0);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.bottom-text {
+  margin-top: 22px;
+  text-align: center;
+  color: #304c6b;
+  font-size: 0.95rem;
+}
+
+.bottom-text a {
+  color: #4a3df0;
+  text-decoration: none;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}
+
+input:invalid,
+textarea:invalid {
+  border-color: #d9dee8;
+}
+
+input:focus:invalid,
+textarea:focus:invalid {
+  border-color: #d93025;
+}
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 500px;
+    padding: 105px 35px 32px;
+  }
+}
