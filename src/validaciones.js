@@ -7,20 +7,24 @@ document.addEventListener("DOMContentLoaded", function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             let isValid = true;
-            const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const mensaje = document.getElementById('mensaje').value.trim();
+            const name = document.getElementById('contact-name-field').value.trim();
+            const email = document.getElementById('contact-email-field').value.trim();
+            const message = document.getElementById('contact-message-field').value.trim();
+            const subject = document.getElementById('contact-subject-field').value.trim();
 
             // Expresión regular para validar email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            if (nombre === '') {
+            if (name === '') {
                 alert('Por favor, introduce tu nombre.');
                 isValid = false;
             } else if (!emailRegex.test(email)) {
                 alert('Por favor, introduce un correo electrónico válido.');
                 isValid = false;
-            } else if (mensaje === '') {
+            }else if(subject === ''){
+                alert('El asunto no puede estar vacío');
+                isValid = false;
+            } else if (message === '') {
                 alert('El mensaje no puede estar vacío.');
                 isValid = false;
             }
@@ -36,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
             let isValid = true;
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
+            const email = document.getElementById('login-email-field').value.trim();
+            const password = document.getElementById('login-password-field').value.trim();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!emailRegex.test(email)) {
