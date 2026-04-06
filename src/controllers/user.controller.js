@@ -15,11 +15,12 @@ export class UserController {
 
       const user = this.sessionService.getStoredUser();
       this.userView.renderGreeting(user);
-
-      const logoutBtn = document.getElementById("logout-btn");
-      if (logoutBtn) {
-        logoutBtn.addEventListener("click", () => this.sessionService.logout());
-      }
+      this.userView.bindLogout(() => this.sessionService.logout());
+      this.userView.bindNavigation((section) => this.navigateTo(section));
     });
+  }
+
+  navigateTo(section) {
+    window.location.href = `/views/${section}.html`;
   }
 }

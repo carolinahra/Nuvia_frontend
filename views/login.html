@@ -39,7 +39,7 @@
   <script type="module">
     import { Container } from '../src/container.js';
 
-    const container = new Container({ http: { url: import.meta.env.VITE_API_URL } });
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
     container.loginController.init();
   </script>
 </body>
