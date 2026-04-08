@@ -1,6 +1,5 @@
 export class UserController {
-  constructor(sessionService, userService, exceptionService, userView) {
-    this.sessionService = sessionService;
+  constructor(userService, exceptionService, userView) {
     this.userService = userService;
     this.exceptionService = exceptionService;
     this.userView = userView;
@@ -8,14 +7,9 @@ export class UserController {
 
   init() {
     document.addEventListener("DOMContentLoaded", () => {
-      if (!this.sessionService.isLoggedIn()) {
-        window.location.href = "/views/login.html";
-        return;
-      }
-
-      const user = this.sessionService.getStoredUser();
+      const user = this.userService.getCurrent();
       this.userView.renderGreeting(user);
-      this.userView.bindLogout(() => this.sessionService.logout());
+      this.userView.bindLogout(() => this.userService.logout());
       this.userView.bindNavigation((section) => this.navigateTo(section));
     });
   }
