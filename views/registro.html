@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - NUVIA</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <div class="mobile-wrapper">
+    <div class="card register-card">
+
+      <div class="logo-box register-logo-box">
+        <img src="../assets/img/logo_nuvia.png" alt="Logo Nuvia" class="logo register-logo">
+      </div>
+
+      <h1 class="title">Crea tu cuenta</h1>
+
+      <form action="#" method="post" class="register-form">
+
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirmar contraseña</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <div class="form-group">
+          <label for="altura">Altura (cm)</label>
+          <input type="number" id="altura" name="altura" min="50" max="250" required>
+        </div>
+
+        <div class="double-fields">
+          <div class="form-group">
+            <label for="pesoActual">Peso actual (kg)</label>
+            <input type="number" id="pesoActual" name="pesoActual" min="20" max="300" step="0.1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pesoObjetivo">Peso objetivo (kg)</label>
+            <input type="number" id="pesoObjetivo" name="pesoObjetivo" min="20" max="300" step="0.1" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-register">Registrarse</button>
+
+        <p class="bottom-text">
+          <br>
+          ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
