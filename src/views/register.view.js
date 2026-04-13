@@ -24,12 +24,4 @@ export class RegisterView {
   renderError(message) {
     this.exceptionView.renderErrorMessage({ httpCode: 0, errorMessage: message });
   }
-
-  renderSuccess(message) {
-    const container = document.getElementById("register-success-message");
-    if (container) {
-      container.textContent = message;
-      container.style.display = "block";
-    }
-  }
 }

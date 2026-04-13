@@ -10,11 +10,9 @@ import { ExceptionView } from "./views/exception.view.js";
 import { LoginView } from "./views/login.view.js";
 import { RegisterView } from "./views/register.view.js";
 import { UserView } from "./views/user.view.js";
-import { RegisterView } from "./views/register.view.js";
 import { LoginController } from "./controllers/login.controller.js";
 import { RegisterController } from "./controllers/register.controller.js";
 import { UserController } from "./controllers/user.controller.js";
-import { RegisterController } from "./controllers/register.controller.js";
 
 export class Container {
   #props = {};
@@ -102,15 +100,6 @@ export class Container {
     return this.#props.registerView;
   }
 
-  get registerController() {
-    if (this.#props.registerController) return this.#props.registerController;
-    this.#props.registerController = new RegisterController(
-      this.userService,
-      this.registerView
-    );
-    return this.#props.registerController;
-  }
-
   get loginController() {
     if (this.#props.loginController) return this.#props.loginController;
     this.#props.loginController = new LoginController(
@@ -134,8 +123,6 @@ export class Container {
     if (this.#props.registerController) return this.#props.registerController;
     this.#props.registerController = new RegisterController(
       this.userService,
-      this.weightLogService,
-      this.exceptionService,
       this.registerView
     );
     return this.#props.registerController;
