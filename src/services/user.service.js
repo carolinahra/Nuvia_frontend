@@ -16,7 +16,7 @@ export class UserService {
 
   logout() {
     this.sessionService.clear();
-    window.location.href = "/views/login.html";
+    window.location.href = "/templates/login.html";
   }
 
   /**

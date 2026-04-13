@@ -30,7 +30,7 @@ class LoginController {
     return this.loginService
       .login({ email, password })
       .then(() => {
-        window.location.href = "/views/home.html";
+        window.location.href = "/templates/home.html";
       })
       .catch((error) =>
         this.loginView.renderError(error.errorMessage ?? error.message)
