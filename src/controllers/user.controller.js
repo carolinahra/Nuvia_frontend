@@ -15,6 +15,6 @@ export class UserController {
   }
 
   navigateTo(section) {
-    window.location.href = `/views/${section}.html`;
+    window.location.href = `/templates/${section}.html`;
   }
 }

@@ -53,7 +53,7 @@ describe("LoginController", () => {
         });
 
         expect(loginService.login).toHaveBeenCalled();
-        expect(window.location.href).toContain("/views/home.html");
+        expect(window.location.href).toContain("/templates/home.html");
     });
 
     test("error servicio", async () => {
