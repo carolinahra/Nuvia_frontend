@@ -17,11 +17,16 @@
 
       <h1 class="title">Crea tu cuenta</h1>
 
-      <form action="#" method="post" class="register-form">
+      <form id="registroForm" class="register-form" method="post">
 
         <div class="form-group">
           <label for="nombre">Nombre completo</label>
           <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="username">Nombre de usuario</label>
+          <input type="text" id="username" name="username" required>
         </div>
 
         <div class="form-group">
@@ -37,6 +42,14 @@
         <div class="form-group">
           <label for="confirmPassword">Confirmar contraseña</label>
           <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <div class="form-group">
+          <label>Sexo</label>
+          <div class="radio-group">
+            <label><input type="radio" name="sex" value="male" required> Hombre</label>
+            <label><input type="radio" name="sex" value="female"> Mujer</label>
+          </div>
         </div>
 
         <div class="form-group">
@@ -67,5 +80,11 @@
     </div>
   </div>
 
+  <script type="module">
+    import { Container } from '../src/container.js';
+
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.registerController.init();
+  </script>
 </body>
 </html>

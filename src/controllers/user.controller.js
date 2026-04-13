@@ -6,12 +6,19 @@ export class UserController {
   }
 
   init() {
-    document.addEventListener("DOMContentLoaded", () => {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = this.userService.getCurrent();
+        this.userView.renderGreeting(user);
+        this.userView.bindLogout(() => this.userService.logout());
+        this.userView.bindNavigation((section) => this.navigateTo(section));
+      });
+    } else {
       const user = this.userService.getCurrent();
       this.userView.renderGreeting(user);
       this.userView.bindLogout(() => this.userService.logout());
       this.userView.bindNavigation((section) => this.navigateTo(section));
-    });
+    }
   }
 
   navigateTo(section) {

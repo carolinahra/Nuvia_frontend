@@ -1,4 +1,4 @@
-class LoginController {
+export class LoginController {
   #emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   constructor(loginService, loginView) {
@@ -7,9 +7,13 @@ class LoginController {
   }
 
   init() {
-    document.addEventListener("DOMContentLoaded", () => {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        this.loginView.bindForm((credentials) => this.handleSubmit(credentials));
+      });
+    } else {
       this.loginView.bindForm((credentials) => this.handleSubmit(credentials));
-    });
+    }
   }
 
   handleSubmit({ email, password }) {
@@ -30,7 +34,7 @@ class LoginController {
     return this.loginService
       .login({ email, password })
       .then(() => {
-        window.location.href = "/templates/home.html";
+        window.location.href = "/templates/menu.html";
       })
       .catch((error) =>
         this.loginView.renderError(error.errorMessage ?? error.message)
@@ -38,4 +42,3 @@ class LoginController {
   }
 }
 
-module.exports = { LoginController };

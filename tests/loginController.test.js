@@ -1,4 +1,4 @@
-const { LoginController } = require("../src/controllers/login.controller");
+import { LoginController } from "../src/controllers/login.controller.js";
 
 describe("LoginController", () => {
     let loginService;
@@ -20,6 +20,12 @@ describe("LoginController", () => {
             assign: jest.fn(),
             replace: jest.fn()
         };
+    });
+
+    test("init llama a bindForm", () => {
+        Object.defineProperty(document, "readyState", { value: "complete", writable: true });
+        controller.init();
+        expect(loginView.bindForm).toHaveBeenCalled();
     });
 
     test("email inválido", () => {
@@ -53,7 +59,7 @@ describe("LoginController", () => {
         });
 
         expect(loginService.login).toHaveBeenCalled();
-        expect(window.location.href).toContain("/templates/home.html");
+        expect(window.location.href).toContain("/templates/menu.html");
     });
 
     test("error servicio", async () => {

@@ -4,17 +4,19 @@ export class RegisterView {
   }
 
   bindForm(handler) {
-    const form = document.getElementById("registerForm");
+    const form = document.getElementById("registroForm");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       handler({
-        name: document.getElementById("register-name-field").value.trim(),
-        email: document.getElementById("register-email-field").value.trim(),
-        password: document.getElementById("register-password-field").value.trim(),
-        confirmPassword: document.getElementById("register-confirm-password-field").value.trim(),
-        currentWeight: document.getElementById("register-current-weight-field").value.trim(),
-        heightCm: document.getElementById("register-height-field").value.trim(),
-        targetWeight: document.getElementById("register-target-weight-field").value.trim(),
+        name: document.getElementById("nombre").value.trim(),
+        username: document.getElementById("username").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        password: document.getElementById("password").value.trim(),
+        confirmPassword: document.getElementById("confirmPassword").value.trim(),
+        sex: document.querySelector('input[name="sex"]:checked')?.value,
+        heightCm: Number(document.getElementById("altura").value),
+        currentWeightKg: Number(document.getElementById("pesoActual").value),
+        targetWeightKg: Number(document.getElementById("pesoObjetivo").value),
       });
     });
   }
