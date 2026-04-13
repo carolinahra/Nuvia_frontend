@@ -20,7 +20,7 @@ body.page-bg {
 
 .card {
   width: 100%;
-  max-width: 430px;
+  max-width: 95vw;
   background-color: #ffffff;
   border-radius: 30px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -245,12 +245,16 @@ textarea:focus:invalid {
 }
 
 /* Responsive */
+
+/* Móvil */
 @media (max-width: 480px) {
   .mobile-wrapper {
     padding: 12px;
   }
 
   .card {
+    width: 100%;
+    max-width: 100%;
     border-radius: 26px;
   }
 
@@ -276,7 +280,8 @@ textarea:focus:invalid {
   }
 
   .form-group input,
-  .form-group textarea {
+  .form-group textarea,
+  .form-group select {
     height: 46px;
   }
 
@@ -334,12 +339,64 @@ textarea:focus:invalid {
   }
 }
 
+/* Tablet */
 @media (min-width: 768px) {
   .card {
-    max-width: 500px;
+    max-width: 700px;
   }
 
   .register-card {
-    padding: 125px 34px 32px;
+    padding: 125px 40px 36px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 180px);
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  .menu-item {
+    width: 180px;
+    height: 180px;
+  }
+
+  .menu-item-icon {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Ordenador */
+@media (min-width: 1024px) {
+  .card {
+    max-width: 800px;
+  }
+
+  .register-card {
+    padding: 125px 50px 40px;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 220px);
+    column-gap: 28px;
+    row-gap: 28px;
+  }
+
+  .menu-item {
+    width: 220px;
+    height: 220px;
+  }
+
+  .menu-item-icon {
+    width: 220px;
+    height: 220px;
   }
 }
