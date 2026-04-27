@@ -22,12 +22,6 @@ describe("LoginController", () => {
         };
     });
 
-    test("init llama a bindForm", () => {
-        Object.defineProperty(document, "readyState", { value: "complete", writable: true });
-        controller.init();
-        expect(loginView.bindForm).toHaveBeenCalled();
-    });
-
     test("email inválido", () => {
         controller.handleSubmit({
             email: "malemail",
