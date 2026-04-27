@@ -30,7 +30,7 @@ export class UserService {
   }
 
   /**
-   * @param {{ name: string, username: string, email: string, password: string, heightCm?: number, birthdate?: string, sex?: string, activityLevel?: string, goal?: string, defaultDietId?: number, defaultRoutineId?: number }} createUserConfig
+   * @param {{ name: string, username: string, email: string, password: string, heightCm?: number, currentWeightKg?: number, targetWeightKg?: number, birthdate?: string, sex?: string, activityLevel?: string, defaultDietId?: number, defaultRoutineId?: number }} createUserConfig
    * @returns {Promise<User>}
    */
   create(createUserConfig) {
