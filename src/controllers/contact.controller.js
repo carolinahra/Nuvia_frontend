@@ -1,4 +1,4 @@
-class ContactController {
+export class ContactController {
   #emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   constructor(contactService, contactView) {
@@ -44,4 +44,3 @@ class ContactController {
   }
 }
 
-module.exports = { ContactController };

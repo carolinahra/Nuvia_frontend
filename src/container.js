@@ -13,6 +13,9 @@ import { UserView } from "./views/user.view.js";
 import { LoginController } from "./controllers/login.controller.js";
 import { RegisterController } from "./controllers/register.controller.js";
 import { UserController } from "./controllers/user.controller.js";
+import { ContactService } from "./services/contact.service.js";
+import { ContactView } from "./views/contact.view.js";
+import { ContactController } from "./controllers/contact.controller.js";
 
 export class Container {
   #props = {};
@@ -126,6 +129,27 @@ export class Container {
       this.registerView
     );
     return this.#props.registerController;
+  }
+
+  get contactService() {
+    if (this.#props.contactService) return this.#props.contactService;
+    this.#props.contactService = new ContactService(this.httpService);
+    return this.#props.contactService;
+  }
+
+  get contactView() {
+    if (this.#props.contactView) return this.#props.contactView;
+    this.#props.contactView = new ContactView(this.exceptionView);
+    return this.#props.contactView;
+  }
+
+  get contactController() {
+    if (this.#props.contactController) return this.#props.contactController;
+    this.#props.contactController = new ContactController(
+      this.contactService,
+      this.contactView
+    );
+    return this.#props.contactController;
   }
 }
 
