@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alimentación - Nuvia</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <div class="mobile-wrapper">
+    <main class="card alimentacion-card">
+
+      <section class="alimentacion-header">
+        <button class="alimentacion-back-btn" type="button" aria-label="Volver">
+          ←
+        </button>
+
+        <div class="alimentacion-title-box">
+          <h1 class="alimentacion-title">Alimentación</h1>
+          <p class="alimentacion-subtitle">Tu plan de alimentación</p>
+        </div>
+
+        <img src="../assets/img/logo_nuvia.png" alt="Logo Nuvia" class="alimentacion-logo">
+      </section>
+
+      <section class="alimentacion-content">
+
+        <section class="alimentacion-plan-box">
+
+          <div class="alimentacion-plan-header">
+            <span class="alimentacion-plan-icon">🍏</span>
+            <h2 class="alimentacion-plan-title">Plan Nutricional Diario</h2>
+          </div>
+
+          <!-- 
+            El JS deberia añadir aqui la comida, con estra estructura. Cuando eso, eliminamos esta 
+          -->
+<article class="alimentacion-meal">
+  <div class="alimentacion-meal-info">
+    <h3 class="alimentacion-meal-name">Desayuno</h3>
+    <p class="alimentacion-meal-description">Avena con frutas, Té verde</p>
+  </div>
+
+  <div class="alimentacion-meal-actions">
+    <span class="alimentacion-kcal">350 kcal</span>
+    <button class="alimentacion-complete-btn" type="button">
+      Completar
+    </button>
+  </div>
+</article>
+
+<!-- boton completed para el futuro
+ <button class="alimentacion-complete-btn completed" type="button">
+  Completado ✓
+</button>
+-->
+
+          <div class="alimentacion-meals-list" id="dietMealsList"></div>
+
+          <div class="alimentacion-total-box">
+            <p>Total Diario: <span id="dietTotalKcal">0 kcal</span></p>
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
