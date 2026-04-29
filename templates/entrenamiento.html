@@ -37,46 +37,20 @@
             <label for="tipoEntrenamiento" class="entrenamiento-select-label">
               Tipo de entrenamiento
             </label>
-
             <select id="tipoEntrenamiento" class="entrenamiento-select">
               <option value="">Selecciona una opción</option>
-              <option value="fuerza">Rutina de Fuerza</option>
-              <option value="cardio">Rutina de Cardio</option>
             </select>
           </div>
 
-          <!-- 
-            El JS dirá la rutina seleccionada (cambiariamos Rutina seleccionada por Rutina de cardio o de fuerza)
-            Por ejemplo: Rutina de Fuerza - 60 min
-          -->
           <div class="entrenamiento-rutina-info" id="trainingRoutineInfo">
             <h3 class="entrenamiento-rutina-title">Rutina seleccionada</h3>
             <span class="entrenamiento-duration">0 min</span>
           </div>
 
-          <!-- 
-            El JS dirá los ejercicios dpendiendo de si el usuario selecciona fuerza o cardio.
-          -->
-          <div class="entrenamiento-exercises-list" id="trainingExercisesList">
-            
-            <!-- Ejemplo de como debe ir organizados los ejercicios -->
-
-            <article class="entrenamiento-exercise">
-            <div class="entrenamiento-exercise-info">
-            <h3 class="entrenamiento-exercise-name">Press de banca</h3>
-            <p class="entrenamiento-exercise-rest">Descanso: 90s</p>
-            </div>
-            <span class="entrenamiento-exercise-series">4x10</span>
-            </article>
-
-            
-
-          </div>
-
-          
+          <div class="entrenamiento-exercises-list" id="trainingExercisesList"></div>
 
           <button class="entrenamiento-start-btn" type="button">
-            Rutina realizada 
+            Rutina realizada
           </button>
 
         </section>
@@ -85,6 +59,12 @@
 
     </main>
   </div>
+
+  <script type="module">
+    import { Container } from '../src/container.js';
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.entrenamientoController.init();
+  </script>
 
 </body>
 </html>

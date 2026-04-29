@@ -6,13 +6,18 @@ import { UserService } from "./services/user.service.js";
 import { DietService } from "./services/diet.service.js";
 import { MealLogService } from "./services/meallog.service.js";
 import { WeightLogService } from "./services/weightlog.service.js";
+import { RoutineService } from "./services/routine.service.js";
+import { ExerciseService } from "./services/exercise.service.js";
+import { RoutineHasExerciseService } from "./services/routine.has.exercise.service.js";
 import { ExceptionView } from "./views/exception.view.js";
 import { LoginView } from "./views/login.view.js";
 import { RegisterView } from "./views/register.view.js";
 import { UserView } from "./views/user.view.js";
+import { RoutineView } from "./views/routine.view.js";
 import { LoginController } from "./controllers/login.controller.js";
 import { RegisterController } from "./controllers/register.controller.js";
 import { UserController } from "./controllers/user.controller.js";
+import { EntrenamientoController } from "./controllers/entrenamiento.controller.js";
 
 export class Container {
   #props = {};
@@ -80,6 +85,24 @@ export class Container {
     return this.#props.weightLogService;
   }
 
+  get routineService() {
+    if (this.#props.routineService) return this.#props.routineService;
+    this.#props.routineService = new RoutineService(this.httpService, this.sessionService);
+    return this.#props.routineService;
+  }
+
+  get exerciseService() {
+    if (this.#props.exerciseService) return this.#props.exerciseService;
+    this.#props.exerciseService = new ExerciseService(this.httpService, this.sessionService);
+    return this.#props.exerciseService;
+  }
+
+  get routineHasExerciseService() {
+    if (this.#props.routineHasExerciseService) return this.#props.routineHasExerciseService;
+    this.#props.routineHasExerciseService = new RoutineHasExerciseService(this.httpService, this.sessionService);
+    return this.#props.routineHasExerciseService;
+  }
+
   // ─── Vistas ────────────────────────────────────────────────────
 
   get loginView() {
@@ -99,6 +122,14 @@ export class Container {
     this.#props.registerView = new RegisterView(this.exceptionView);
     return this.#props.registerView;
   }
+
+  get routineView() {
+    if (this.#props.routineView) return this.#props.routineView;
+    this.#props.routineView = new RoutineView();
+    return this.#props.routineView;
+  }
+
+  // ─── Controladores ─────────────────────────────────────────────
 
   get loginController() {
     if (this.#props.loginController) return this.#props.loginController;
@@ -127,5 +158,16 @@ export class Container {
     );
     return this.#props.registerController;
   }
-}
 
+  get entrenamientoController() {
+    if (this.#props.entrenamientoController) return this.#props.entrenamientoController;
+    this.#props.entrenamientoController = new EntrenamientoController(
+      this.routineService,
+      this.routineHasExerciseService,
+      this.userService,
+      this.exceptionService,
+      this.routineView
+    );
+    return this.#props.entrenamientoController;
+  }
+}

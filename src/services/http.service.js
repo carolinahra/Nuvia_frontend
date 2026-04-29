@@ -10,7 +10,7 @@ export class HTTPService {
     const token = localStorage.getItem("sessionToken");
     const headers = {};
     if (token) {
-      headers.token = token;
+      headers["Authorization"] = `Bearer ${token}`;
     }
 
     return fetch(`${this.config.url}/${path}?${query}`, { headers })
@@ -41,7 +41,7 @@ export class HTTPService {
     const headers = {
       "Content-Type": "application/json; charset=UTF-8",
     };
-    if (token) headers.token = token;
+    if (token) headers["Authorization"] = `Bearer ${token}`;
 
     return fetch(`${this.config.url}/${path}`, {
       method: "POST",
@@ -75,7 +75,7 @@ export class HTTPService {
     const headers = {
       "Content-Type": "application/json; charset=UTF-8",
     };
-    if (token) headers.token = token;
+    if (token) headers["Authorization"] = `Bearer ${token}`;
 
     return fetch(`${this.config.url}/${path}`, {
       method: "PUT",
@@ -109,7 +109,7 @@ export class HTTPService {
     const headers = {
       "Content-Type": "application/json; charset=UTF-8",
     };
-    if (token) headers.token = token;
+    if (token) headers["Authorization"] = `Bearer ${token}`;
 
     return fetch(`${this.config.url}/${path}`, {
       method: "DELETE",
