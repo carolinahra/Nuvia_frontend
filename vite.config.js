@@ -10,6 +10,7 @@ export default defineConfig({
         menu: resolve(__dirname, 'templates/menu.html'),
         registro: resolve(__dirname, 'templates/registro.html'),
         contacto: resolve(__dirname, 'templates/contacto.html'),
+        entrenamiento: resolve(__dirname, 'templates/entrenamiento.html'),
       }
     }
   }
