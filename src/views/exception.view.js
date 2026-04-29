@@ -35,6 +35,14 @@ const styles = `
     font-size: 14px;
   }
 
+  .toast.success {
+    border-left-color: #2ecc71;
+  }
+
+  .toast.success .toast-title {
+    color: #2ecc71;
+  }
+
   .toast-message {
     color: #333;
     font-size: 13px;
@@ -82,6 +90,26 @@ export class ExceptionView {
     toast.innerHTML = `
       <span class="toast-title">Error ${errorResponse.httpCode || ""}</span>
       <span class="toast-message">${errorResponse.errorMessage}</span>
+    `;
+
+    container.appendChild(toast);
+
+    const remove = () => {
+      toast.classList.add("hiding");
+      toast.addEventListener("animationend", () => toast.remove(), { once: true });
+    };
+
+    setTimeout(remove, TOAST_DURATION_MS);
+  }
+
+  renderSuccessMessage(message) {
+    const container = getOrCreateContainer();
+
+    const toast = document.createElement("div");
+    toast.className = "toast success";
+    toast.innerHTML = `
+      <span class="toast-title">Éxito</span>
+      <span class="toast-message">${message}</span>
     `;
 
     container.appendChild(toast);
