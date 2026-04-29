@@ -1002,3 +1002,657 @@ textarea:focus:invalid {
     font-size: 1rem;
   }
 }
+
+/* perfil */
+
+.perfil-card {
+  min-height: 760px;
+  padding: 0;
+  background-color: #e7e5fb;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 24px 18px;
+  background-color: #f5f7fb;
+}
+
+.perfil-back-btn {
+  border: none;
+  background: transparent;
+  color: #2f4f6f;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.perfil-title-box {
+  text-align: center;
+  flex: 1;
+}
+
+.perfil-title {
+  font-size: 2rem;
+  color:#5548e8;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.perfil-subtitle {
+  font-size: 1rem;
+  color: #8f9bb2;
+}
+
+.perfil-logo {
+  width: 52px;
+  height: auto;
+  display: block;
+}
+
+.perfil-content {
+  flex: 1;
+  padding: 26px 20px 32px;
+  background-color: #e7e5fb;
+}
+
+.perfil-option {
+  width: 100%;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 18px;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.perfil-option:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.72);
+}
+
+.perfil-option:active {
+  transform: scale(0.98);
+}
+
+.perfil-option-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: #eceaff;
+  color: #5548e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.perfil-option-text h2 {
+  font-size: 1.05rem;
+  color: #2f4f6f;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.perfil-option-text p {
+  font-size: 0.92rem;
+  color: #8f9bb2;
+}
+
+/* responsive perfil */
+
+@media (max-width: 480px) {
+  .perfil-card {
+    min-height: auto;
+  }
+
+  .perfil-header {
+    padding: 22px 16px 16px;
+  }
+
+  .perfil-back-btn {
+    font-size: 1.7rem;
+  }
+
+  .perfil-title {
+    font-size: 1.45rem;
+  }
+
+  .perfil-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .perfil-logo {
+    width: 44px;
+  }
+
+  .perfil-content {
+    padding: 20px 12px 26px;
+  }
+
+  .perfil-option {
+    min-height: 78px;
+    padding: 16px 14px;
+    gap: 14px;
+    border-radius: 16px;
+  }
+
+  .perfil-option-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+  }
+
+  .perfil-option-text h2 {
+    font-size: 0.95rem;
+  }
+
+  .perfil-option-text p {
+    font-size: 0.82rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .perfil-title {
+    font-size: 2.2rem;
+  }
+
+  .perfil-option {
+    min-height: 100px;
+  }
+
+  .perfil-option-text h2 {
+    font-size: 1.12rem;
+  }
+
+  .perfil-option-text p {
+    font-size: 0.98rem;
+  }
+}
+
+/* editar perfil */
+
+.editar-perfil-card {
+  min-height: 760px;
+  padding: 0;
+  background-color: #e7e5fb;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editar-perfil-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 24px 18px;
+  background-color: #f5f7fb;
+}
+
+.editar-perfil-back-btn {
+  border: none;
+  background: transparent;
+  color: #2f4f6f;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.editar-perfil-title-box {
+  text-align: center;
+  flex: 1;
+}
+
+.editar-perfil-title {
+  font-size: 2rem;
+  color: #5548e8;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.editar-perfil-subtitle {
+  font-size: 1rem;
+  color: #8f9bb2;
+}
+
+.editar-perfil-logo {
+  width: 52px;
+  height: auto;
+  display: block;
+}
+
+.editar-perfil-content {
+  flex: 1;
+  padding: 26px 20px 32px;
+  background-color: #e7e5fb;
+}
+
+.editar-perfil-form {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 22px;
+  padding: 24px 22px 26px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+}
+
+.editar-perfil-form-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.editar-perfil-form-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background-color: #eceaff;
+  color: #5548e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.editar-perfil-form-title {
+  font-size: 1.2rem;
+  color: #2f4f6f;
+  font-weight: 700;
+}
+
+.editar-perfil-group {
+  margin-bottom: 18px;
+}
+
+.editar-perfil-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2f4f6f;
+  font-size: 0.95rem;
+}
+
+.editar-perfil-group input,
+.editar-perfil-group select {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1.5px solid #d9deef;
+  border-radius: 14px;
+  background-color: #ffffff;
+  color: #2f4f6f;
+  font-size: 1rem;
+  outline: none;
+}
+
+.editar-perfil-group input:focus,
+.editar-perfil-group select:focus {
+  border-color: #5548e8;
+}
+
+.editar-perfil-double {
+  display: flex;
+  gap: 14px;
+}
+
+.editar-perfil-double .editar-perfil-group {
+  flex: 1;
+}
+
+.editar-perfil-save-btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 14px;
+  background-color: #5548e8;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(85, 72, 232, 0.25);
+  transition: all 0.2s ease;
+}
+
+.editar-perfil-save-btn:hover {
+  background-color: #473bd0;
+}
+
+.editar-perfil-save-btn:active {
+  transform: scale(0.98);
+}
+
+/* responsive editar perfil */
+
+@media (max-width: 480px) {
+  .editar-perfil-card {
+    min-height: auto;
+  }
+
+  .editar-perfil-header {
+    padding: 22px 16px 16px;
+  }
+
+  .editar-perfil-back-btn {
+    font-size: 1.7rem;
+  }
+
+  .editar-perfil-title {
+    font-size: 1.45rem;
+  }
+
+  .editar-perfil-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .editar-perfil-logo {
+    width: 44px;
+  }
+
+  .editar-perfil-content {
+    padding: 20px 12px 26px;
+  }
+
+  .editar-perfil-form {
+    padding: 22px 14px 22px;
+  }
+
+  .editar-perfil-form-header {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .editar-perfil-form-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+  }
+
+  .editar-perfil-form-title {
+    font-size: 1rem;
+  }
+
+  .editar-perfil-group label {
+    font-size: 0.88rem;
+  }
+
+  .editar-perfil-group input,
+  .editar-perfil-group select {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+
+  .editar-perfil-double {
+    gap: 10px;
+  }
+
+  .editar-perfil-save-btn {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .editar-perfil-title {
+    font-size: 2.2rem;
+  }
+
+  .editar-perfil-form-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ingesta calórica */
+
+.ingesta-card {
+  min-height: 760px;
+  padding: 0;
+  background-color: #e7e5fb;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ingesta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 24px 18px;
+  background-color: #f5f7fb;
+}
+
+.ingesta-back-btn {
+  border: none;
+  background: transparent;
+  color: #2f4f6f;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.ingesta-title-box {
+  text-align: center;
+  flex: 1;
+}
+
+.ingesta-title {
+  font-size: 2rem;
+  color: #5548e8;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.ingesta-subtitle {
+  font-size: 1rem;
+  color: #8f9bb2;
+}
+
+.ingesta-logo {
+  width: 52px;
+  height: auto;
+  display: block;
+}
+
+.ingesta-content {
+  flex: 1;
+  padding: 26px 20px 32px;
+  background-color: #e7e5fb;
+}
+
+.ingesta-box {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 22px;
+  padding: 24px 22px 26px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+}
+
+.ingesta-box-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.ingesta-box-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background-color: #eceaff;
+  color: #5548e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.ingesta-box-title {
+  font-size: 1.2rem;
+  color: #2f4f6f;
+  font-weight: 700;
+}
+
+/* contenedor donde JS insertará el formulario */
+
+.ingesta-form-container {
+  width: 100%;
+}
+
+/* estilos preparados por si el JS crea inputs, selects y botones dentro */
+
+.ingesta-form-container label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2f4f6f;
+  font-size: 0.95rem;
+}
+
+.ingesta-form-container input,
+.ingesta-form-container select {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1.5px solid #d9deef;
+  border-radius: 14px;
+  background-color: #ffffff;
+  color: #2f4f6f;
+  font-size: 1rem;
+  outline: none;
+}
+
+.ingesta-form-container input:focus,
+.ingesta-form-container select:focus {
+  border-color: #5548e8;
+}
+
+.ingesta-form-container button {
+  width: 100%;
+  height: 50px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 14px;
+  background-color: #5548e8;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(85, 72, 232, 0.25);
+  transition: all 0.2s ease;
+}
+
+.ingesta-form-container button:hover {
+  background-color: #473bd0;
+}
+
+.ingesta-form-container button:active {
+  transform: scale(0.98);
+}
+
+/* clases opcionales para que el JS pueda organizar el formulario */
+
+.ingesta-form-group {
+  margin-bottom: 18px;
+}
+
+.ingesta-double-fields {
+  display: flex;
+  gap: 14px;
+}
+
+.ingesta-double-fields .ingesta-form-group {
+  flex: 1;
+}
+
+/* responsive ingesta calórica */
+
+@media (max-width: 480px) {
+  .ingesta-card {
+    min-height: auto;
+  }
+
+  .ingesta-header {
+    padding: 22px 16px 16px;
+  }
+
+  .ingesta-back-btn {
+    font-size: 1.7rem;
+  }
+
+  .ingesta-title {
+    font-size: 1.45rem;
+  }
+
+  .ingesta-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .ingesta-logo {
+    width: 44px;
+  }
+
+  .ingesta-content {
+    padding: 20px 12px 26px;
+  }
+
+  .ingesta-box {
+    padding: 22px 14px 22px;
+  }
+
+  .ingesta-box-header {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .ingesta-box-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+  }
+
+  .ingesta-box-title {
+    font-size: 1rem;
+  }
+
+  .ingesta-form-container label {
+    font-size: 0.88rem;
+  }
+
+  .ingesta-form-container input,
+  .ingesta-form-container select {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+
+  .ingesta-form-container button {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+
+  .ingesta-double-fields {
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ingesta-title {
+    font-size: 2.2rem;
+  }
+
+  .ingesta-box-title {
+    font-size: 1.3rem;
+  }
+}

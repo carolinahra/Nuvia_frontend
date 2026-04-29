@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil - Nuvia</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <div class="mobile-wrapper">
+    <main class="card editar-perfil-card">
+
+      <section class="editar-perfil-header">
+        <button class="editar-perfil-back-btn" type="button" aria-label="Volver">
+          ←
+        </button>
+
+        <div class="editar-perfil-title-box">
+          <h1 class="editar-perfil-title">Editar Perfil</h1>
+          <p class="editar-perfil-subtitle">Edita tus datos</p>
+        </div>
+
+        <img src="../assets/img/logo_nuvia.png" alt="Logo Nuvia" class="editar-perfil-logo">
+      </section>
+
+      <section class="editar-perfil-content">
+
+        <form class="editar-perfil-form">
+
+          <div class="editar-perfil-form-header">
+            <div class="editar-perfil-form-icon">
+              👤
+            </div>
+
+            <h2 class="editar-perfil-form-title">Datos Personales</h2>
+          </div>
+
+          <div class="editar-perfil-group">
+            <label for="nombreCompleto">Nombre completo</label>
+            <input type="text" id="nombreCompleto" name="nombreCompleto">
+          </div>
+
+          <div class="editar-perfil-group">
+            <label for="altura">Altura (cm)</label>
+            <input type="number" id="altura" name="altura">
+          </div>
+
+          <div class="editar-perfil-double">
+            <div class="editar-perfil-group">
+              <label for="pesoActual">Peso actual (kg)</label>
+              <input type="number" id="pesoActual" name="pesoActual">
+            </div>
+
+            <div class="editar-perfil-group">
+              <label for="pesoObjetivo">Peso objetivo (kg)</label>
+              <input type="number" id="pesoObjetivo" name="pesoObjetivo">
+            </div>
+          </div>
+
+          <div class="editar-perfil-group">
+            <label for="objetivo">Objetivo</label>
+            <select id="objetivo" name="objetivo">
+              <option value="">Selecciona tu objetivo</option>
+              <option value="ganar">Ganar peso</option>
+              <option value="perder">Perder peso</option>
+              <option value="mantener">Mantener peso</option>
+            </select>
+          </div>
+
+          <button class="editar-perfil-save-btn" type="submit">
+            Guardar y Continuar
+          </button>
+
+        </form>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
