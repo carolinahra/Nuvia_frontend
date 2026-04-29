@@ -700,3 +700,305 @@ textarea:focus:invalid {
 .alimentacion-meal-actions {
   gap: 12px !important;
 }
+
+/* entrenamiento */
+
+.entrenamiento-card {
+  min-height: 760px;
+  padding: 0;
+  background-color: #dcecff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.entrenamiento-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 24px 18px;
+  background-color: #f5f7fb;
+}
+
+.entrenamiento-back-btn {
+  border: none;
+  background: transparent;
+  color: #2f4f6f;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.entrenamiento-title-box {
+  text-align: center;
+  flex: 1;
+}
+
+.entrenamiento-title {
+  font-size: 2rem;
+  color: #1c8dff;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.entrenamiento-subtitle {
+  font-size: 1rem;
+  color: #9aa5b8;
+}
+
+.entrenamiento-logo {
+  width: 52px;
+  height: auto;
+  display: block;
+}
+
+.entrenamiento-content {
+  flex: 1;
+  padding: 26px 20px 32px;
+  background-color: #dcecff;
+}
+
+.entrenamiento-plan-box {
+  background-color: rgba(255, 255, 255, 0.48);
+  border-radius: 24px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+}
+
+.entrenamiento-plan-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.entrenamiento-plan-icon {
+  font-size: 1.9rem;
+}
+
+.entrenamiento-plan-title {
+  font-size: 1.35rem;
+  color: #2f4f6f;
+  font-weight: 500;
+}
+
+.entrenamiento-select-box {
+  margin-bottom: 28px;
+}
+
+.entrenamiento-select-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2f4f6f;
+  font-size: 0.95rem;
+}
+
+.entrenamiento-select {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1.5px solid #9fcfff;
+  border-radius: 14px;
+  background-color: #ffffff;
+  color: #2f4f6f;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.entrenamiento-select:focus {
+  border-color: #1c8dff;
+}
+
+.entrenamiento-rutina-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.entrenamiento-rutina-title {
+  font-size: 1.15rem;
+  color: #2f4f6f;
+  font-weight: 500;
+}
+
+.entrenamiento-duration {
+  background-color: #cbe5ff;
+  color: #1c8dff;
+  font-size: 0.85rem;
+  padding: 7px 15px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.entrenamiento-exercises-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+
+.entrenamiento-exercise {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.entrenamiento-exercise-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.entrenamiento-exercise-name {
+  font-size: 1.08rem;
+  color: #2f4f6f;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.entrenamiento-exercise-rest {
+  font-size: 0.92rem;
+  color: #8fa0d0;
+}
+
+.entrenamiento-exercise-series {
+  color: #1c8dff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.entrenamiento-start-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  background-color: #1c8dff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(28, 141, 255, 0.22);
+  transition: all 0.2s ease;
+}
+
+.entrenamiento-start-btn:hover {
+  background-color: #147be0;
+}
+
+.entrenamiento-start-btn:active {
+  transform: scale(0.98);
+}
+
+/* responsive entrenamiento */
+
+@media (max-width: 480px) {
+  .entrenamiento-card {
+    min-height: auto;
+  }
+
+  .entrenamiento-header {
+    padding: 22px 16px 16px;
+  }
+
+  .entrenamiento-back-btn {
+    font-size: 1.7rem;
+  }
+
+  .entrenamiento-title {
+    font-size: 1.45rem;
+  }
+
+  .entrenamiento-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .entrenamiento-logo {
+    width: 44px;
+  }
+
+  .entrenamiento-content {
+    padding: 20px 12px 26px;
+  }
+
+  .entrenamiento-plan-box {
+    padding: 22px 14px 18px;
+  }
+
+  .entrenamiento-plan-header {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .entrenamiento-plan-title {
+    font-size: 1.05rem;
+  }
+
+  .entrenamiento-select {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+
+  .entrenamiento-rutina-title {
+    font-size: 1rem;
+  }
+
+  .entrenamiento-duration {
+    font-size: 0.78rem;
+    padding: 7px 12px;
+  }
+
+  .entrenamiento-exercises-list {
+    gap: 24px;
+  }
+
+  .entrenamiento-exercise {
+    gap: 10px;
+  }
+
+  .entrenamiento-exercise-name {
+    font-size: 0.98rem;
+  }
+
+  .entrenamiento-exercise-rest {
+    font-size: 0.86rem;
+  }
+
+  .entrenamiento-exercise-series {
+    font-size: 0.88rem;
+  }
+
+  .entrenamiento-start-btn {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .entrenamiento-title {
+    font-size: 2.2rem;
+  }
+
+  .entrenamiento-plan-title {
+    font-size: 1.45rem;
+  }
+
+  .entrenamiento-rutina-title {
+    font-size: 1.2rem;
+  }
+
+  .entrenamiento-exercise-name {
+    font-size: 1.15rem;
+  }
+
+  .entrenamiento-exercise-rest {
+    font-size: 0.98rem;
+  }
+
+  .entrenamiento-exercise-series {
+    font-size: 1rem;
+  }
+}

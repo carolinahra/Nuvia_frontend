@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrenamiento - Nuvia</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <div class="mobile-wrapper">
+    <main class="card entrenamiento-card">
+
+      <section class="entrenamiento-header">
+        <button class="entrenamiento-back-btn" type="button" aria-label="Volver">
+          ←
+        </button>
+
+        <div class="entrenamiento-title-box">
+          <h1 class="entrenamiento-title">Entrenamiento</h1>
+          <p class="entrenamiento-subtitle">Elige tu entrenamiento</p>
+        </div>
+
+        <img src="../assets/img/logo_nuvia.png" alt="Logo Nuvia" class="entrenamiento-logo">
+      </section>
+
+      <section class="entrenamiento-content">
+
+        <section class="entrenamiento-plan-box">
+
+          <div class="entrenamiento-plan-header">
+            <span class="entrenamiento-plan-icon">🏋️</span>
+            <h2 class="entrenamiento-plan-title">Selecciona una rutina</h2>
+          </div>
+
+          <div class="entrenamiento-select-box">
+            <label for="tipoEntrenamiento" class="entrenamiento-select-label">
+              Tipo de entrenamiento
+            </label>
+
+            <select id="tipoEntrenamiento" class="entrenamiento-select">
+              <option value="">Selecciona una opción</option>
+              <option value="fuerza">Rutina de Fuerza</option>
+              <option value="cardio">Rutina de Cardio</option>
+            </select>
+          </div>
+
+          <!-- 
+            El JS dirá la rutina seleccionada (cambiariamos Rutina seleccionada por Rutina de cardio o de fuerza)
+            Por ejemplo: Rutina de Fuerza - 60 min
+          -->
+          <div class="entrenamiento-rutina-info" id="trainingRoutineInfo">
+            <h3 class="entrenamiento-rutina-title">Rutina seleccionada</h3>
+            <span class="entrenamiento-duration">0 min</span>
+          </div>
+
+          <!-- 
+            El JS dirá los ejercicios dpendiendo de si el usuario selecciona fuerza o cardio.
+          -->
+          <div class="entrenamiento-exercises-list" id="trainingExercisesList">
+            
+            <!-- Ejemplo de como debe ir organizados los ejercicios -->
+
+            <article class="entrenamiento-exercise">
+            <div class="entrenamiento-exercise-info">
+            <h3 class="entrenamiento-exercise-name">Press de banca</h3>
+            <p class="entrenamiento-exercise-rest">Descanso: 90s</p>
+            </div>
+            <span class="entrenamiento-exercise-series">4x10</span>
+            </article>
+
+            
+
+          </div>
+
+          
+
+          <button class="entrenamiento-start-btn" type="button">
+            Rutina realizada 
+          </button>
+
+        </section>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
