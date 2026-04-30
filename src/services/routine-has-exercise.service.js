@@ -1,4 +1,4 @@
-import { RoutineHasExercise } from "../models/routine.has.exercise.js";
+import { RoutineHasExercise } from "../models/routine-has-exercise.js";
 
 export class RoutineHasExerciseService {
   constructor(httpService, sessionService) {

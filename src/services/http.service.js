@@ -19,7 +19,7 @@ export class HTTPService {
         if (!response.ok) {
           throw new Exception({
             httpCode: response.status,
-            errorMessage: body.errorMessage,
+            errorMessage: body.error ?? body.errorMessage,
           });
         }
         return body;
@@ -53,7 +53,7 @@ export class HTTPService {
         if (!response.ok) {
           throw new Exception({
             httpCode: response.status,
-            errorMessage: body.errorMessage,
+            errorMessage: body.error ?? body.errorMessage,
           });
         }
         return body;
@@ -87,7 +87,7 @@ export class HTTPService {
         if (!response.ok) {
           throw new Exception({
             httpCode: response.status,
-            errorMessage: body.errorMessage,
+            errorMessage: body.error ?? body.errorMessage,
           });
         }
         return body;
@@ -121,7 +121,7 @@ export class HTTPService {
         if (!response.ok) {
           throw new Exception({
             httpCode: response.status,
-            errorMessage: body.errorMessage,
+            errorMessage: body.error ?? body.errorMessage,
           });
         }
         return body;

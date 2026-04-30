@@ -21,7 +21,7 @@ export class MealLogService {
   }
 
   /**
-   * @param {{ user_meal_log_user: number, user_meal_log_dish: number, user_meal_log_quantity?: number, user_meal_log_created_at?: string }} createMealLogConfig
+   * @param {{ userId: number, dishId: number, quantity?: number, createdAt?: string }} createMealLogConfig
    * @returns {Promise<object>}
    */
   create(createMealLogConfig) {
@@ -29,7 +29,7 @@ export class MealLogService {
   }
 
   /**
-   * @param {{ id: number, user_meal_log_user?: number, user_meal_log_dish?: number, user_meal_log_quantity?: number }} updateMealLogConfig
+   * @param {{ id: number, userId?: number, dishId?: number, quantity?: number }} updateMealLogConfig
    * @returns {Promise<object>}
    */
   update(updateMealLogConfig) {

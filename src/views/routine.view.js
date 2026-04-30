@@ -1,7 +1,9 @@
 export class RoutineView {
   renderRoutineDropdown(routines, selectedId) {
     const select = document.getElementById("tipoEntrenamiento");
-    if (!select) return;
+    if (!select) {
+      return;
+    }
     select.innerHTML = '<option value="">Selecciona una opción</option>';
     routines.forEach((routine) => {
       const option = document.createElement("option");
@@ -18,8 +20,12 @@ export class RoutineView {
   }
 
   renderRoutineInfo(routine) {
-    const titleEl = document.querySelector("#trainingRoutineInfo .entrenamiento-rutina-title");
-    const durationEl = document.querySelector("#trainingRoutineInfo .entrenamiento-duration");
+    const titleEl = document.querySelector(
+      "#trainingRoutineInfo .entrenamiento-rutina-title",
+    );
+    const durationEl = document.querySelector(
+      "#trainingRoutineInfo .entrenamiento-duration",
+    );
     if (titleEl) titleEl.textContent = routine.name;
     if (durationEl) durationEl.textContent = `${routine.durationMinutes} min`;
   }
@@ -28,7 +34,9 @@ export class RoutineView {
     const listEl = document.getElementById("trainingExercisesList");
     if (!listEl) return;
     listEl.innerHTML = "";
-    const sorted = [...exercises].sort((a, b) => (a.orderIndex ?? 0) - (b.orderIndex ?? 0));
+    const sorted = [...exercises].sort(
+      (a, b) => (a.orderIndex ?? 0) - (b.orderIndex ?? 0),
+    );
     sorted.forEach((ex) => listEl.appendChild(this.buildExerciseCard(ex)));
   }
 
@@ -36,11 +44,12 @@ export class RoutineView {
     const article = document.createElement("article");
     article.className = "entrenamiento-exercise";
 
-    const seriesText = ex.sets && ex.reps
-      ? `${ex.sets}x${ex.reps}`
-      : ex.sets
-        ? `${ex.sets} series`
-        : "";
+    const seriesText =
+      ex.sets && ex.reps
+        ? `${ex.sets}x${ex.reps}`
+        : ex.sets
+          ? `${ex.sets} series`
+          : "";
     const restText = ex.restSeconds ? `Descanso: ${ex.restSeconds}s` : "";
 
     article.innerHTML = `
@@ -55,11 +64,15 @@ export class RoutineView {
 
   bindRoutineSelect(handler) {
     const select = document.getElementById("tipoEntrenamiento");
-    if (select) select.addEventListener("change", (e) => handler(Number(e.target.value)));
+    if (select) {
+      select.addEventListener("change", (e) => handler(Number(e.target.value)));
+    }
   }
 
   bindBackButton(handler) {
     const btn = document.querySelector(".entrenamiento-back-btn");
-    if (btn) btn.addEventListener("click", handler);
+    if (btn) {
+      btn.addEventListener("click", handler);
+    }
   }
 }

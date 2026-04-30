@@ -1,22 +1,8 @@
 import { User } from "../models/user.js";
 
 export class UserService {
-  constructor(httpService, sessionService) {
+  constructor(httpService) {
     this.httpService = httpService;
-    this.sessionService = sessionService;
-  }
-
-  /**
-   * @returns {User | null}
-   */
-  getCurrent() {
-    const stored = this.sessionService.getStoredUser();
-    return stored ? new User(stored) : null;
-  }
-
-  logout() {
-    this.sessionService.clear();
-    window.location.href = "/templates/login.html";
   }
 
   /**

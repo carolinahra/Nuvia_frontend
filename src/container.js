@@ -4,11 +4,11 @@ import { SessionService } from "./services/session.service.js";
 import { LoginService } from "./services/login.service.js";
 import { UserService } from "./services/user.service.js";
 import { DietService } from "./services/diet.service.js";
-import { MealLogService } from "./services/meallog.service.js";
-import { WeightLogService } from "./services/weightlog.service.js";
+import { MealLogService } from "./services/meal-log.service.js";
+import { UserWeightLogService } from "./services/user-weight-log.service.js";
 import { RoutineService } from "./services/routine.service.js";
 import { ExerciseService } from "./services/exercise.service.js";
-import { RoutineHasExerciseService } from "./services/routine.has.exercise.service.js";
+import { RoutineHasExerciseService } from "./services/routine-has-exercise.service.js";
 import { ExceptionView } from "./views/exception.view.js";
 import { LoginView } from "./views/login.view.js";
 import { RegisterView } from "./views/register.view.js";
@@ -66,7 +66,7 @@ export class Container {
 
   get userService() {
     if (this.#props.userService) return this.#props.userService;
-    this.#props.userService = new UserService(this.httpService, this.sessionService);
+    this.#props.userService = new UserService(this.httpService);
     return this.#props.userService;
   }
 
@@ -82,10 +82,10 @@ export class Container {
     return this.#props.mealLogService;
   }
 
-  get weightLogService() {
-    if (this.#props.weightLogService) return this.#props.weightLogService;
-    this.#props.weightLogService = new WeightLogService(this.httpService, this.sessionService);
-    return this.#props.weightLogService;
+  get userWeightLogService() {
+    if (this.#props.userWeightLogService) return this.#props.userWeightLogService;
+    this.#props.userWeightLogService = new UserWeightLogService(this.httpService, this.sessionService);
+    return this.#props.userWeightLogService;
   }
 
   get routineService() {
@@ -146,7 +146,7 @@ export class Container {
   get userController() {
     if (this.#props.userController) return this.#props.userController;
     this.#props.userController = new UserController(
-      this.userService,
+      this.sessionService,
       this.exceptionService,
       this.userView
     );
@@ -167,7 +167,7 @@ export class Container {
     this.#props.entrenamientoController = new EntrenamientoController(
       this.routineService,
       this.routineHasExerciseService,
-      this.userService,
+      this.sessionService,
       this.exceptionService,
       this.routineView
     );

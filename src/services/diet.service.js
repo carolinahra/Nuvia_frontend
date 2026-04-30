@@ -21,7 +21,7 @@ export class DietService {
   }
 
   /**
-   * @param {{ diet_name: string, diet_description: string, diet_total_daily_calories: number, diet_goal: string, diet_type: string }} createDietConfig
+   * @param {{ name: string, description: string, totalDailyCalories: number, goal: string, type: string }} createDietConfig
    * @returns {Promise<object>}
    */
   create(createDietConfig) {
@@ -29,7 +29,7 @@ export class DietService {
   }
 
   /**
-   * @param {{ id: number, diet_name?: string, diet_description?: string, diet_total_daily_calories?: number, diet_goal?: string, diet_type?: string }} updateDietConfig
+   * @param {{ id: number, name?: string, description?: string, totalDailyCalories?: number, goal?: string, type?: string }} updateDietConfig
    * @returns {Promise<object>}
    */
   update(updateDietConfig) {

@@ -1,24 +1,15 @@
 export class UserController {
-  constructor(userService, exceptionService, userView) {
-    this.userService = userService;
+  constructor(sessionService, exceptionService, userView) {
+    this.sessionService = sessionService;
     this.exceptionService = exceptionService;
     this.userView = userView;
   }
 
   init() {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => {
-        const user = this.userService.getCurrent();
-        this.userView.renderGreeting(user);
-        this.userView.bindLogout(() => this.userService.logout());
-        this.userView.bindNavigation((section) => this.navigateTo(section));
-      });
-    } else {
-      const user = this.userService.getCurrent();
-      this.userView.renderGreeting(user);
-      this.userView.bindLogout(() => this.userService.logout());
-      this.userView.bindNavigation((section) => this.navigateTo(section));
-    }
+    const user = this.sessionService.getCurrentUser();
+    this.userView.renderGreeting(user);
+    this.userView.bindLogout(() => this.sessionService.logout());
+    this.userView.bindNavigation((section) => this.navigateTo(section));
   }
 
   navigateTo(section) {
