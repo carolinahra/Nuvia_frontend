@@ -3,15 +3,18 @@ export class EntrenamientoController {
     routineService,
     routineHasExerciseService,
     sessionService,
+    trainingSessionService,
     exceptionService,
     routineView,
   ) {
     this.routineService = routineService;
     this.routineHasExerciseService = routineHasExerciseService;
     this.sessionService = sessionService;
+    this.trainingSessionService = trainingSessionService;
     this.exceptionService = exceptionService;
     this.routineView = routineView;
     this.routines = [];
+    this.currentRoutineId = null;
   }
 
   init() {
@@ -24,6 +27,7 @@ export class EntrenamientoController {
           this.loadExercises(id);
         }
       });
+      this.routineView.bindCompleteButton(() => this.handleComplete());
       this.loadAll();
     });
   }
@@ -46,12 +50,23 @@ export class EntrenamientoController {
   }
 
   loadExercises(routineId) {
+    this.currentRoutineId = routineId;
     const routine = this.routines.find((r) => r.id === routineId);
     this.routineHasExerciseService
       .getByRoutineId(routineId)
       .then((exercises) => {
         this.routineView.renderRoutine(routine, exercises);
       })
+      .catch((err) => this.exceptionService.handle(err));
+  }
+
+  handleComplete() {
+    if (!this.currentRoutineId) {
+      return;
+    }
+    const user = this.sessionService.getCurrentUser();
+    this.trainingSessionService
+      .create({ userId: user.id, routineId: this.currentRoutineId })
       .catch((err) => this.exceptionService.handle(err));
   }
 }

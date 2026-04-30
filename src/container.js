@@ -9,6 +9,7 @@ import { UserWeightLogService } from "./services/user-weight-log.service.js";
 import { RoutineService } from "./services/routine.service.js";
 import { ExerciseService } from "./services/exercise.service.js";
 import { RoutineHasExerciseService } from "./services/routine-has-exercise.service.js";
+import { TrainingSessionService } from "./services/training-session.service.js";
 import { ExceptionView } from "./views/exception.view.js";
 import { LoginView } from "./views/login.view.js";
 import { RegisterView } from "./views/register.view.js";
@@ -106,6 +107,12 @@ export class Container {
     return this.#props.routineHasExerciseService;
   }
 
+  get trainingSessionService() {
+    if (this.#props.trainingSessionService) return this.#props.trainingSessionService;
+    this.#props.trainingSessionService = new TrainingSessionService(this.httpService);
+    return this.#props.trainingSessionService;
+  }
+
   // ─── Vistas ────────────────────────────────────────────────────
 
   get loginView() {
@@ -168,6 +175,7 @@ export class Container {
       this.routineService,
       this.routineHasExerciseService,
       this.sessionService,
+      this.trainingSessionService,
       this.exceptionService,
       this.routineView
     );

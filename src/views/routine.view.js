@@ -75,4 +75,11 @@ export class RoutineView {
       btn.addEventListener("click", handler);
     }
   }
+
+  bindCompleteButton(handler) {
+    const btn = document.querySelector(".entrenamiento-start-btn");
+    if (btn) {
+      btn.addEventListener("click", handler);
+    }
+  }
 }
