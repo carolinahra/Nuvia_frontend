@@ -65,6 +65,9 @@ export class EntrenamientoController {
       return;
     }
     const user = this.sessionService.getCurrentUser();
+    if (!user) {
+      return;
+    }
     this.trainingSessionService
       .create({ userId: user.id, routineId: this.currentRoutineId })
       .catch((err) => this.exceptionService.handle(err));
