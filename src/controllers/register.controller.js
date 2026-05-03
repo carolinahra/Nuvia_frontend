@@ -15,6 +15,11 @@ export class RegisterController {
   }
 
   handleSubmit({ name, username, email, password, confirmPassword, sex, heightCm, currentWeightKg, targetWeightKg }) {
+    if (password.length < 6) {
+      this.registerView.renderError("La contraseña debe tener al menos 6 caracteres.");
+      return;
+    }
+
     if (password !== confirmPassword) {
       this.registerView.renderError("Las contraseñas no coinciden.");
       return;

@@ -70,6 +70,7 @@ export class EntrenamientoController {
     }
     this.trainingSessionService
       .create({ userId: user.id, routineId: this.currentRoutineId })
+      .then(() => this.routineView.renderSuccess("¡Rutina completada!"))
       .catch((err) => this.exceptionService.handle(err));
   }
 }

@@ -62,6 +62,20 @@ export class RoutineView {
     return article;
   }
 
+  renderSuccess(message) {
+    let toast = document.getElementById("entrenamiento-success-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "entrenamiento-success-toast";
+      toast.className = "entrenamiento-success-toast";
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add("visible");
+    clearTimeout(toast._hideTimer);
+    toast._hideTimer = setTimeout(() => toast.classList.remove("visible"), 3000);
+  }
+
   bindRoutineSelect(handler) {
     const select = document.getElementById("tipoEntrenamiento");
     if (select) {
