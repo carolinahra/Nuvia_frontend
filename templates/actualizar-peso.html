@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualizar Peso</title>
+ <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <div class="mobile-wrapper">
+    <main class="card actualizar-peso-card">
+
+      <section class="actualizar-peso-header">
+
+        <a href="estadisticas.html" class="actualizar-peso-back-btn">
+          ←
+        </a>
+
+        <div class="actualizar-peso-title-box">
+          <h1 class="actualizar-peso-title">Actualizar Peso</h1>
+          <p class="actualizar-peso-subtitle">Registra tu peso actual</p>
+        </div>
+
+        <img src="../assets/img/logo_nuvia.png" alt="Logo Nuvia" class="actualizar-peso-logo">
+
+      </section>
+
+      <section class="actualizar-peso-content">
+
+        <form action="#" method="post" class="actualizar-peso-box">
+
+          <div class="actualizar-peso-icon-box">
+            ⚖
+          </div>
+
+          <h2 class="actualizar-peso-box-title">Nuevo Registro</h2>
+          <p class="actualizar-peso-box-subtitle">Ingresa tu peso actualizado</p>
+
+          <div class="actualizar-peso-form-group">
+            <label for="peso">Peso (kg)</label>
+
+            <div class="actualizar-peso-input-box">
+              <input 
+                type="number" 
+                id="peso" 
+                name="peso" 
+                min="0" 
+                step="0.1" 
+                placeholder="0.0"
+                required
+              >
+              <span>kg</span>
+            </div>
+          </div>
+
+          <button type="button" class="actualizar-peso-btn">
+            Guardar Peso
+          </button>
+
+        </form>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
