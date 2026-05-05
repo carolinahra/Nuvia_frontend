@@ -22,6 +22,8 @@ import { EntrenamientoController } from "./controllers/entrenamiento.controller.
 import { ContactService } from "./services/contact.service.js";
 import { ContactView } from "./views/contact.view.js";
 import { ContactController } from "./controllers/contact.controller.js";
+import { AlimentacionView } from "./views/alimentacion.view.js";
+import { AlimentacionController } from "./controllers/alimentacion.controller.js";
 
 export class Container {
   #props = {};
@@ -180,6 +182,24 @@ export class Container {
       this.routineView
     );
     return this.#props.entrenamientoController;
+  }
+
+  get alimentacionView() {
+    if (this.#props.alimentacionView) return this.#props.alimentacionView;
+    this.#props.alimentacionView = new AlimentacionView();
+    return this.#props.alimentacionView;
+  }
+
+  get alimentacionController() {
+    if (this.#props.alimentacionController) return this.#props.alimentacionController;
+    this.#props.alimentacionController = new AlimentacionController(
+      this.dietService,
+      this.mealLogService,
+      this.sessionService,
+      this.exceptionService,
+      this.alimentacionView,
+    );
+    return this.#props.alimentacionController;
   }
 
   get contactService() {
