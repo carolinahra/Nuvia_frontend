@@ -33,34 +33,7 @@
             <h2 class="alimentacion-plan-title">Plan Nutricional Diario</h2>
           </div>
 
-          <!-- 
-            El JS deberia añadir aqui la comida, con estra estructura. Cuando eso, eliminamos esta 
-          -->
-<article class="alimentacion-meal">
-  <div class="alimentacion-meal-info">
-    <h3 class="alimentacion-meal-name">Desayuno</h3>
-    <p class="alimentacion-meal-description">Avena con frutas, Té verde</p>
-  </div>
-
-  <div class="alimentacion-meal-actions">
-    <span class="alimentacion-kcal">350 kcal</span>
-    <button class="alimentacion-complete-btn" type="button">
-      Completar
-    </button>
-  </div>
-</article>
-
-<!-- boton completed para el futuro
- <button class="alimentacion-complete-btn completed" type="button">
-  Completado ✓
-</button>
--->
-
-          <div class="alimentacion-meals-list" id="dietMealsList"></div>
-
-          <div class="alimentacion-total-box">
-            <p>Total Diario: <span id="dietTotalKcal">0 kcal</span></p>
-          </div>
+          <div id="alimentacionContainer"></div>
 
         </section>
 
@@ -68,6 +41,12 @@
 
     </main>
   </div>
+
+  <script type="module">
+    import { Container } from '../src/container.js';
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.alimentacionController.init();
+  </script>
 
 </body>
 </html>
