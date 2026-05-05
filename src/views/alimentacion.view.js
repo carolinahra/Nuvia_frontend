@@ -18,7 +18,7 @@ export class AlimentacionView {
     }
   }
 
-  buildMealSection(mealType, label, dishes) {
+  buildMealSection(mealType, label, dishes, completedDishIds) {
     const section = document.createElement('div');
     section.className = 'alimentacion-meal-section';
     section.dataset.meal = mealType;
@@ -46,6 +46,10 @@ export class AlimentacionView {
       opt.textContent = dish.name;
       select.appendChild(opt);
     });
+
+    if (completedDishIds && dishes.some((d) => completedDishIds.has(d.id))) {
+      select.disabled = true;
+    }
 
     selectBox.appendChild(lbl);
     selectBox.appendChild(select);
