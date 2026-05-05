@@ -6,7 +6,7 @@ export class AlimentacionController {
     this.exceptionService = exceptionService;
     this.alimentacionView = alimentacionView;
     this.grouped = {};
-    this.completedDishIds = new Set();
+    this.completedDishIds = [];
   }
 
   init() {
@@ -39,7 +39,7 @@ export class AlimentacionController {
     ])
       .then(([grouped, logs]) => {
         this.grouped = grouped;
-        this.completedDishIds = new Set(logs.map((log) => log.dishId));
+        this.completedDishIds = logs.map((log) => log.dishId);
         this.alimentacionView.renderMealSections(grouped, this.completedDishIds);
 
         for (const [mealType, dishes] of Object.entries(grouped)) {
@@ -59,14 +59,14 @@ export class AlimentacionController {
       return;
     }
     const dish = (this.grouped[mealType] ?? []).find((d) => d.id === dishId) ?? null;
-    this.alimentacionView.renderDishCard(mealType, dish, this.completedDishIds.has(dishId));
+    this.alimentacionView.renderDishCard(mealType, dish, this.completedDishIds.includes(dishId));
   }
 
   handleComplete(dishId, mealType, btn) {
     this.mealLogService
       .create({ dishId })
       .then(() => {
-        this.completedDishIds.add(dishId);
+        this.completedDishIds.push(dishId);
         this.alimentacionView.markCompleted(btn);
         this.alimentacionView.renderSuccess('¡Plato completado!');
       })

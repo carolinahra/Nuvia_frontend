@@ -47,7 +47,7 @@ export class AlimentacionView {
       select.appendChild(opt);
     });
 
-    if (completedDishIds && dishes.some((d) => completedDishIds.has(d.id))) {
+    if (completedDishIds && dishes.some((d) => completedDishIds.includes(d.id))) {
       select.disabled = true;
     }
 
