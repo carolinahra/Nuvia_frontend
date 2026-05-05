@@ -14,8 +14,8 @@ export class AlimentacionController {
       this.alimentacionView.bindMealSelects((mealType, dishId) => {
         this.handleMealSelect(mealType, dishId);
       });
-      this.alimentacionView.bindCompleteButtons((dishId, mealType, btn) => {
-        this.handleComplete(dishId, mealType, btn);
+      this.alimentacionView.bindCompleteButtons((dishId, btn) => {
+        this.handleComplete(dishId, btn);
       });
       this.load();
     });
@@ -33,17 +33,18 @@ export class AlimentacionController {
 
     const today = new Date().toISOString().slice(0, 10);
 
-    Promise.all([
-      this.dietService.getDishesByDiet(dietId),
-      this.mealLogService.get({ userId: user.id, date: today }),
-    ])
-      .then(([grouped, logs]) => {
+    this.dietService
+      .getDishesByDiet(dietId)
+      .then((grouped) => {
         this.grouped = grouped;
+        return this.mealLogService.get({ userId: user.id, date: today }).catch(() => []);
+      })
+      .then((logs) => {
         this.completedDishIds = logs.map((log) => log.dishId);
-        this.alimentacionView.renderMealSections(grouped, this.completedDishIds);
+        this.alimentacionView.renderMealSections(this.grouped, this.completedDishIds);
 
-        for (const [mealType, dishes] of Object.entries(grouped)) {
-          const completedDish = dishes.find((d) => this.completedDishIds.has(d.id));
+        for (const [mealType, dishes] of Object.entries(this.grouped)) {
+          const completedDish = dishes.find((d) => this.completedDishIds.includes(d.id));
           if (completedDish) {
             this.alimentacionView.preSelectDish(mealType, completedDish.id);
             this.alimentacionView.renderDishCard(mealType, completedDish, true);
@@ -62,7 +63,7 @@ export class AlimentacionController {
     this.alimentacionView.renderDishCard(mealType, dish, this.completedDishIds.includes(dishId));
   }
 
-  handleComplete(dishId, mealType, btn) {
+  handleComplete(dishId, btn) {
     this.mealLogService
       .create({ dishId })
       .then(() => {

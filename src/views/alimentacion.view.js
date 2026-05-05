@@ -130,7 +130,7 @@ export class AlimentacionView {
     document.getElementById('alimentacionContainer')?.addEventListener('click', (e) => {
       const btn = e.target.closest('.alimentacion-complete-btn:not(.completed)');
       if (!btn) return;
-      handler(Number(btn.dataset.dishId), btn.dataset.meal, btn);
+      handler(Number(btn.dataset.dishId), btn);
     });
   }
 
