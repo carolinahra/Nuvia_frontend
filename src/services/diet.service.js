@@ -43,4 +43,12 @@ export class DietService {
   delete(deleteDietConfig) {
     return this.httpService.delete("diets", deleteDietConfig);
   }
+
+  /**
+   * @param {number} dietId
+   * @returns {Promise<Record<string, Array<{id: number, name: string, calories: number}>>>}
+   */
+  getDishesByDiet(dietId) {
+    return this.httpService.get(`nutrition/diet/${dietId}/dishes`, {});
+  }
 }
