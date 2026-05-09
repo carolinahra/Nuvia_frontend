@@ -12,7 +12,7 @@ export class UserWeightLogService {
    */
   get(getUserWeightLogConfig) {
     return this.httpService
-      .get("user-weight-logs", getUserWeightLogConfig)
+      .get("weight-logs", getUserWeightLogConfig)
       .then((data) => data.map((e) => new UserWeightLog(e)));
   }
 
@@ -22,7 +22,7 @@ export class UserWeightLogService {
    */
   getById(id) {
     return this.httpService
-      .get("user-weight-logs", { id })
+      .get("weight-logs", { id })
       .then((data) => new UserWeightLog(data[0]));
   }
 
@@ -32,7 +32,7 @@ export class UserWeightLogService {
    */
   create(createUserWeightLogConfig) {
     return this.httpService
-      .post("user-weight-logs", createUserWeightLogConfig)
+      .post("weight-logs", createUserWeightLogConfig)
       .then((data) => new UserWeightLog(data));
   }
 
@@ -42,7 +42,7 @@ export class UserWeightLogService {
    */
   update(updateUserWeightLogConfig) {
     return this.httpService
-      .put("user-weight-logs", updateUserWeightLogConfig)
+      .put("weight-logs", updateUserWeightLogConfig)
       .then((data) => new UserWeightLog(data));
   }
 
@@ -51,6 +51,6 @@ export class UserWeightLogService {
    * @returns {Promise<boolean>}
    */
   delete(deleteUserWeightLogConfig) {
-    return this.httpService.delete("user-weight-logs", deleteUserWeightLogConfig);
+    return this.httpService.delete("weight-logs", deleteUserWeightLogConfig);
   }
 }
