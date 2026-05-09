@@ -26,7 +26,7 @@
 
       <section class="editar-perfil-content">
 
-        <form class="editar-perfil-form">
+        <form id="editarPerfilForm" class="editar-perfil-form">
 
           <div class="editar-perfil-form-header">
             <div class="editar-perfil-form-icon">
@@ -42,29 +42,54 @@
           </div>
 
           <div class="editar-perfil-group">
+            <label for="fechaNacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+          </div>
+
+          <div class="editar-perfil-group">
+            <label>Sexo</label>
+            <div class="radio-group">
+              <label><input type="radio" name="sex" value="male"> Hombre</label>
+              <label><input type="radio" name="sex" value="female"> Mujer</label>
+            </div>
+          </div>
+
+          <div class="editar-perfil-group">
             <label for="altura">Altura (cm)</label>
-            <input type="number" id="altura" name="altura">
+            <input type="number" id="altura" name="altura" min="50" max="250">
           </div>
 
           <div class="editar-perfil-double">
             <div class="editar-perfil-group">
               <label for="pesoActual">Peso actual (kg)</label>
-              <input type="number" id="pesoActual" name="pesoActual">
+              <input type="number" id="pesoActual" name="pesoActual" min="20" max="300" step="0.1">
             </div>
 
             <div class="editar-perfil-group">
               <label for="pesoObjetivo">Peso objetivo (kg)</label>
-              <input type="number" id="pesoObjetivo" name="pesoObjetivo">
+              <input type="number" id="pesoObjetivo" name="pesoObjetivo" min="20" max="300" step="0.1">
             </div>
+          </div>
+
+          <div class="editar-perfil-group">
+            <label for="nivelActividad">Nivel de actividad</label>
+            <select id="nivelActividad" name="nivelActividad">
+              <option value="">Selecciona tu nivel</option>
+              <option value="sedentary">Sedentario (poco o ningún ejercicio)</option>
+              <option value="light">Ligero (1-3 días/semana)</option>
+              <option value="moderate">Moderado (3-5 días/semana)</option>
+              <option value="active">Activo (6-7 días/semana)</option>
+              <option value="very_active">Muy activo (2 veces/día)</option>
+            </select>
           </div>
 
           <div class="editar-perfil-group">
             <label for="objetivo">Objetivo</label>
             <select id="objetivo" name="objetivo">
               <option value="">Selecciona tu objetivo</option>
-              <option value="ganar">Ganar peso</option>
-              <option value="perder">Perder peso</option>
-              <option value="mantener">Mantener peso</option>
+              <option value="gain">Ganar peso</option>
+              <option value="lose">Perder peso</option>
+              <option value="maintain">Mantener peso</option>
             </select>
           </div>
 
@@ -79,5 +104,11 @@
     </main>
   </div>
 
+  <script type="module">
+    import { Container } from '../src/container.js';
+
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.perfilController.init();
+  </script>
 </body>
 </html>
