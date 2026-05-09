@@ -24,6 +24,11 @@ import { ContactView } from "./views/contact.view.js";
 import { ContactController } from "./controllers/contact.controller.js";
 import { AlimentacionView } from "./views/alimentacion.view.js";
 import { AlimentacionController } from "./controllers/alimentacion.controller.js";
+import { TmbService } from "./services/tmb.service.js";
+import { PerfilView } from "./views/perfil.view.js";
+import { CaloriasView } from "./views/calorias.view.js";
+import { PerfilController } from "./controllers/perfil.controller.js";
+import { CaloriasController } from "./controllers/calorias.controller.js";
 
 export class Container {
   #props = {};
@@ -221,6 +226,49 @@ export class Container {
       this.contactView
     );
     return this.#props.contactController;
+  }
+
+  // ─── Perfil / Calorías ────────────────────────────────────────
+
+  get tmbService() {
+    if (this.#props.tmbService) return this.#props.tmbService;
+    this.#props.tmbService = new TmbService(this.httpService);
+    return this.#props.tmbService;
+  }
+
+  get perfilView() {
+    if (this.#props.perfilView) return this.#props.perfilView;
+    this.#props.perfilView = new PerfilView(this.exceptionView);
+    return this.#props.perfilView;
+  }
+
+  get caloriasView() {
+    if (this.#props.caloriasView) return this.#props.caloriasView;
+    this.#props.caloriasView = new CaloriasView(this.exceptionView);
+    return this.#props.caloriasView;
+  }
+
+  get perfilController() {
+    if (this.#props.perfilController) return this.#props.perfilController;
+    this.#props.perfilController = new PerfilController(
+      this.userService,
+      this.userWeightLogService,
+      this.sessionService,
+      this.exceptionService,
+      this.perfilView
+    );
+    return this.#props.perfilController;
+  }
+
+  get caloriasController() {
+    if (this.#props.caloriasController) return this.#props.caloriasController;
+    this.#props.caloriasController = new CaloriasController(
+      this.tmbService,
+      this.sessionService,
+      this.exceptionService,
+      this.caloriasView
+    );
+    return this.#props.caloriasController;
   }
 }
 
