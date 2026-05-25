@@ -1794,7 +1794,9 @@ textarea:focus:invalid {
 @keyframes toast-out {
   from { opacity: 1; transform: translateX(0); }
   to   { opacity: 0; transform: translateX(40px); }
+}
 
+@media (max-width: 480px) {
   .ingesta-form-container button {
     height: 46px;
     font-size: 0.95rem;
@@ -1812,5 +1814,84 @@ textarea:focus:invalid {
 
   .ingesta-box-title {
     font-size: 1.3rem;
+  }
+}
+/* resultado calculadora calórica */
+
+#tmbResultContainer {
+  margin-top: 24px;
+}
+
+.ingesta-results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ingesta-result-item {
+  background-color: rgba(255, 255, 255, 0.72);
+  border: 1.5px solid #d9deef;
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.ingesta-result-item.highlight {
+  background-color: #eceaff;
+  border-color: #5548e8;
+  box-shadow: 0 8px 18px rgba(85, 72, 232, 0.16);
+}
+
+.ingesta-result-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #8f9bb2;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ingesta-result-value {
+  display: block;
+  margin-bottom: 8px;
+  color: #5548e8;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.ingesta-result-desc {
+  display: block;
+  color: #2f4f6f;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.ingesta-result-item.highlight .ingesta-result-value {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .ingesta-results {
+    flex-direction: row;
+  }
+
+  .ingesta-result-item {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .ingesta-result-item {
+    padding: 16px 14px;
+  }
+
+  .ingesta-result-value {
+    font-size: 1.45rem;
+  }
+
+  .ingesta-result-item.highlight .ingesta-result-value {
+    font-size: 1.65rem;
   }
 }
