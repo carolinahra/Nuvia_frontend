@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUVIA - Olvidé mi contraseña</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <main class="mobile-wrapper">
+    <section class="card register-card">
+      <div class="logo-box">
+        <img src="../assets/img/logo_nuvia_nombre.png" alt="Logo NUVIA" class="logo">
+      </div>
+
+      <h1 class="title">Recuperar contraseña</h1>
+      <p class="bottom-text" style="margin-bottom: 24px;">Introduce tu email y te enviaremos un enlace para restablecer tu contraseña.</p>
+
+      <form id="forgotPasswordForm" class="form">
+        <div class="form-group">
+          <label for="forgot-email">Email</label>
+          <input type="email" id="forgot-email" name="forgot-email" required aria-required="true">
+        </div>
+
+        <button type="submit" class="btn-primary">Enviar enlace</button>
+      </form>
+      <br>
+
+      <p class="bottom-text">
+        ¿Recuerdas tu contraseña? <a href="login.html">Inicia sesión</a>
+      </p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { Container } from '../src/container.js';
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.recoverPasswordController.initForgot();
+  </script>
+</body>
+</html>

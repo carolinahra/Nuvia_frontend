@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUVIA - Nueva contraseña</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <main class="mobile-wrapper">
+    <section class="card register-card">
+      <div class="logo-box">
+        <img src="../assets/img/logo_nuvia_nombre.png" alt="Logo NUVIA" class="logo">
+      </div>
+
+      <h1 class="title">Nueva contraseña</h1>
+      <p class="bottom-text">Introduce tu nueva contraseña para completar el proceso.</p>
+
+      <form id="resetPasswordForm" class="form">
+        <div class="form-group">
+          <label for="reset-password">Nueva contraseña</label>
+          <input type="password" id="reset-password" name="reset-password" required aria-required="true" minlength="6">
+        </div>
+
+        <div class="form-group">
+          <label for="reset-repeat-password">Repite la contraseña</label>
+          <input type="password" id="reset-repeat-password" name="reset-repeat-password" required aria-required="true" minlength="6">
+        </div>
+
+        <button type="submit" class="btn-primary">Restablecer contraseña</button>
+      </form>
+      <br>
+
+      <p class="bottom-text">
+        ¿Recuerdas tu contraseña? <a href="login.html">Inicia sesión</a>
+      </p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { Container } from '../src/container.js';
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.recoverPasswordController.initReset();
+  </script>
+</body>
+</html>
