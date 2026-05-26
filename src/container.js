@@ -33,6 +33,9 @@ import { PerfilView } from "./views/perfil.view.js";
 import { CaloriasView } from "./views/calorias.view.js";
 import { PerfilController } from "./controllers/perfil.controller.js";
 import { CaloriasController } from "./controllers/calorias.controller.js";
+import { PasswordService } from "./services/password.service.js";
+import { RecoverPasswordView } from "./views/recover-password.view.js";
+import { RecoverPasswordController } from "./controllers/recover-password.controller.js";
 
 export class Container {
   #props = {};
@@ -310,6 +313,28 @@ export class Container {
       this.caloriasView
     );
     return this.#props.caloriasController;
+  }
+
+  get passwordService() {
+    if (this.#props.passwordService) return this.#props.passwordService;
+    this.#props.passwordService = new PasswordService(this.httpService);
+    return this.#props.passwordService;
+  }
+
+  get recoverPasswordView() {
+    if (this.#props.recoverPasswordView) return this.#props.recoverPasswordView;
+    this.#props.recoverPasswordView = new RecoverPasswordView(this.exceptionView);
+    return this.#props.recoverPasswordView;
+  }
+
+  get recoverPasswordController() {
+    if (this.#props.recoverPasswordController) return this.#props.recoverPasswordController;
+    this.#props.recoverPasswordController = new RecoverPasswordController(
+      this.passwordService,
+      this.exceptionService,
+      this.recoverPasswordView
+    );
+    return this.#props.recoverPasswordController;
   }
 }
 
