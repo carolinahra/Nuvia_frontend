@@ -39,7 +39,7 @@
           </div>
 
           <div class="consultar-estadisticas-weight-value">
-            68.5 <span>kg</span>
+            <span id="weight-value">-</span> <span>kg</span>
           </div>
         </article>
 
@@ -71,73 +71,32 @@
                 </tr>
               </thead>
 
-              <tbody>
-  <tr>
-    <td>Desayuno</td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-  </tr>
-
-  <tr>
-    <td>Media mañana</td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-  </tr>
-
-  <tr>
-    <td>Almuerzo</td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-  </tr>
-
-  <tr>
-    <td>Merienda</td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-  </tr>
-
-  <tr>
-    <td>Cena</td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-completado">✓</span></td>
-    <td><span class="estado-pendiente">-</span></td>
-    <td><span class="estado-completado">✓</span></td>
-  </tr>
-
-  <tr class="consultar-estadisticas-total-row">
-    <td>Total</td>
-    <td>4/5</td>
-    <td>4/5</td>
-    <td>3/5</td>
-    <td>4/5</td>
-    <td>3/5</td>
-    <td>3/5</td>
-    <td>4/5</td>
-  </tr>
-</tbody>
+              <tbody id="meal-log-tbody">
+                <tr id="meal-row-desayuno">
+                  <td>Desayuno</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-media-manana">
+                  <td>Media mañana</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-almuerzo">
+                  <td>Almuerzo</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-merienda">
+                  <td>Merienda</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-cena">
+                  <td>Cena</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-log-total-row" class="consultar-estadisticas-total-row">
+                  <td>Total</td>
+                  <td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td>
+                </tr>
+              </tbody>
             </table>
           </div>
 
@@ -172,25 +131,25 @@
     </thead>
 
     <tbody>
-      <tr>
+      <tr id="training-status-row">
         <td>Rutina completa</td>
-        <td><span class="estado-completado">✓</span></td>
-        <td><span class="estado-pendiente">-</span></td>
-        <td><span class="estado-completado">✓</span></td>
-        <td><span class="estado-completado">✓</span></td>
-        <td><span class="estado-pendiente">-</span></td>
-        <td><span class="estado-completado">✓</span></td>
-        <td><span class="estado-pendiente">-</span></td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
-      <tr class="consultar-estadisticas-total-row">
+      <tr id="training-total-row" class="consultar-estadisticas-total-row">
         <td>Total</td>
-        <td>1/1</td>
         <td>0/1</td>
-        <td>1/1</td>
-        <td>1/1</td>
         <td>0/1</td>
-        <td>1/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
         <td>0/1</td>
       </tr>
     </tbody>
@@ -204,17 +163,17 @@
 
   <div class="consultar-estadisticas-summary-item">
     <span>Comidas completadas</span>
-    <strong>25/35</strong>
+    <strong id="meal-summary-value">0</strong>
   </div>
 
   <div class="consultar-estadisticas-summary-item">
     <span>Rutinas completadas</span>
-    <strong>4/7</strong>
+    <strong id="training-summary-value">0/7</strong>
   </div>
 
   <div class="consultar-estadisticas-summary-item">
     <span>Peso actual</span>
-    <strong>68.5 kg</strong>
+    <strong id="weight-summary-value">-</strong>
   </div>
 
 </article>
@@ -224,5 +183,10 @@
     </main>
   </div>
 
+  <script type="module">
+    import { Container } from '../src/container.js';
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.consultarEstadisticasController.init();
+  </script>
 </body>
 </html>
