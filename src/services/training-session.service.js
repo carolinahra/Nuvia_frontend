@@ -6,7 +6,7 @@ export class TrainingSessionService {
   }
 
   /**
-   * @param {{ userId?: number, routineId?: number }} getTrainingSessionConfig
+   * @param {{ routineId?: number }} getTrainingSessionConfig
    * @returns {Promise<TrainingSession[]>}
    */
   get(getTrainingSessionConfig) {
@@ -26,7 +26,7 @@ export class TrainingSessionService {
   }
 
   /**
-   * @param {{ userId: number, routineId: number, completedAt?: string }} createTrainingSessionConfig
+   * @param {{ routineId: number, completedAt?: string }} createTrainingSessionConfig
    * @returns {Promise<TrainingSession>}
    */
   create(createTrainingSessionConfig) {

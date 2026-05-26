@@ -19,6 +19,10 @@ import { LoginController } from "./controllers/login.controller.js";
 import { RegisterController } from "./controllers/register.controller.js";
 import { UserController } from "./controllers/user.controller.js";
 import { EntrenamientoController } from "./controllers/entrenamiento.controller.js";
+import { WeightLogView } from "./views/weight-log.view.js";
+import { WeightLogController } from "./controllers/weight-log.controller.js";
+import { ConsultarEstadisticasView } from "./views/consultar-estadisticas.view.js";
+import { ConsultarEstadisticasController } from "./controllers/consultar-estadisticas.controller.js";
 import { ContactService } from "./services/contact.service.js";
 import { ContactView } from "./views/contact.view.js";
 import { ContactController } from "./controllers/contact.controller.js";
@@ -180,6 +184,43 @@ export class Container {
       this.routineView
     );
     return this.#props.entrenamientoController;
+  }
+
+  get weightLogView() {
+    if (this.#props.weightLogView) return this.#props.weightLogView;
+    this.#props.weightLogView = new WeightLogView();
+    return this.#props.weightLogView;
+  }
+
+  get weightLogController() {
+    if (this.#props.weightLogController) return this.#props.weightLogController;
+    this.#props.weightLogController = new WeightLogController(
+      this.userWeightLogService,
+      this.exceptionService,
+      this.exceptionView,
+      this.weightLogView
+    );
+    return this.#props.weightLogController;
+  }
+
+  get consultarEstadisticasView() {
+    if (this.#props.consultarEstadisticasView) { return this.#props.consultarEstadisticasView; }
+    this.#props.consultarEstadisticasView = new ConsultarEstadisticasView();
+    return this.#props.consultarEstadisticasView;
+  }
+
+  get consultarEstadisticasController() {
+    if (this.#props.consultarEstadisticasController) { return this.#props.consultarEstadisticasController; }
+    this.#props.consultarEstadisticasController = new ConsultarEstadisticasController(
+      this.userWeightLogService,
+      this.trainingSessionService,
+      this.mealLogService,
+      this.dietService,
+      this.sessionService,
+      this.exceptionService,
+      this.consultarEstadisticasView
+    );
+    return this.#props.consultarEstadisticasController;
   }
 
   get contactService() {

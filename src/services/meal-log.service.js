@@ -5,11 +5,11 @@ export class MealLogService {
   }
 
   /**
-   * @param {{ userId?: number }} getMealLogConfig
+   * @param {{ from?: string, to?: string, date?: string }} getMealLogConfig
    * @returns {Promise<object[]>}
    */
   get(getMealLogConfig) {
-    return this.httpService.get("user-meal-logs", getMealLogConfig);
+    return this.httpService.get("user-meal-log", getMealLogConfig);
   }
 
   /**
@@ -17,23 +17,23 @@ export class MealLogService {
    * @returns {Promise<object>}
    */
   getById(id) {
-    return this.httpService.get("user-meal-logs", { id });
+    return this.httpService.get("user-meal-log", { id });
   }
 
   /**
-   * @param {{ userId: number, dishId: number, quantity?: number, createdAt?: string }} createMealLogConfig
+   * @param {{ dishId: number, quantity?: number }} createMealLogConfig
    * @returns {Promise<object>}
    */
   create(createMealLogConfig) {
-    return this.httpService.post("user-meal-logs", createMealLogConfig);
+    return this.httpService.post("user-meal-log", createMealLogConfig);
   }
 
   /**
-   * @param {{ id: number, userId?: number, dishId?: number, quantity?: number }} updateMealLogConfig
+   * @param {{ id: number, dishId?: number, quantity?: number }} updateMealLogConfig
    * @returns {Promise<object>}
    */
   update(updateMealLogConfig) {
-    return this.httpService.put("user-meal-logs", updateMealLogConfig);
+    return this.httpService.put("user-meal-log", updateMealLogConfig);
   }
 
   /**
@@ -41,6 +41,6 @@ export class MealLogService {
    * @returns {Promise<boolean>}
    */
   delete(deleteMealLogConfig) {
-    return this.httpService.delete("user-meal-logs", deleteMealLogConfig);
+    return this.httpService.delete("user-meal-log", deleteMealLogConfig);
   }
 }
