@@ -18,6 +18,8 @@ export default defineConfig({
         estadisticas: resolve(__dirname, 'templates/estadisticas.html'),
         actualizarPeso: resolve(__dirname, 'templates/actualizar-peso.html'),
         consultarEstadisticas: resolve(__dirname, 'templates/consultar-estadisticas.html'),
+        olvidarContrasena: resolve(__dirname, 'templates/olvidar-contrasena.html'),
+        recuperarContrasena: resolve(__dirname, 'templates/recuperar-contrasena.html'),
       }
     }
   }
