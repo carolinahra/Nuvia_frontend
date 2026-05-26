@@ -64,12 +64,8 @@ export class EntrenamientoController {
     if (!this.currentRoutineId) {
       return;
     }
-    const user = this.sessionService.getCurrentUser();
-    if (!user) {
-      return;
-    }
     this.trainingSessionService
-      .create({ userId: user.id, routineId: this.currentRoutineId })
+      .create({ routineId: this.currentRoutineId })
       .then(() => this.routineView.renderSuccess("¡Rutina completada!"))
       .catch((err) => this.exceptionService.handle(err));
   }

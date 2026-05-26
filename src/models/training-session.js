@@ -1,8 +1,7 @@
 export class TrainingSession {
-  constructor({ id, userId, routineId, completedAt }) {
+  constructor({ id, routineId, createdAt }) {
     this.id = id;
-    this.userId = userId;
     this.routineId = routineId;
-    this.completedAt = completedAt;
+    this.createdAt = createdAt;
   }
 }

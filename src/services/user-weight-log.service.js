@@ -7,7 +7,7 @@ export class UserWeightLogService {
   }
 
   /**
-   * @param {{ userId?: number }} getUserWeightLogConfig
+   * @param {{}} getUserWeightLogConfig
    * @returns {Promise<UserWeightLog[]>}
    */
   get(getUserWeightLogConfig) {
@@ -27,7 +27,7 @@ export class UserWeightLogService {
   }
 
   /**
-   * @param {{ userId: number, weightKg: number, createdAt?: string }} createUserWeightLogConfig
+   * @param {{ weightKg: number, createdAt?: string }} createUserWeightLogConfig
    * @returns {Promise<UserWeightLog>}
    */
   create(createUserWeightLogConfig) {

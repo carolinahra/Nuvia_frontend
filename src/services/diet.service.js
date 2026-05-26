@@ -46,7 +46,7 @@ export class DietService {
 
   /**
    * @param {number} dietId
-   * @returns {Promise<Record<string, Array<{id: number, name: string, calories: number}>>>}
+   * @returns {Promise<{ desayuno: object[], 'media-manana': object[], almuerzo: object[], merienda: object[], cena: object[] }>}
    */
   getDishesByDiet(dietId) {
     return this.httpService.get(`nutrition/diet/${dietId}/dishes`, {});

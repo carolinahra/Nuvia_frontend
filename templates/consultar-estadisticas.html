@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultar Estadísticas</title>
+ <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="page-bg">
+
+  <div class="mobile-wrapper">
+    <main class="card consultar-estadisticas-card">
+
+      <section class="consultar-estadisticas-header">
+
+        <a href="estadisticas.html" class="consultar-estadisticas-back-btn">
+          ←
+        </a>
+
+        <div class="consultar-estadisticas-title-box">
+          <h1 class="consultar-estadisticas-title">Consultar Estadísticas</h1>
+          <p class="consultar-estadisticas-subtitle">Visualiza tu progreso semanal</p>
+        </div>
+
+        <img src="../assets/img/logo_nuvia.png" alt="Logo Nuvia" class="consultar-estadisticas-logo">
+
+      </section>
+
+      <section class="consultar-estadisticas-content">
+
+        <article class="consultar-estadisticas-weight-card">
+          <div class="consultar-estadisticas-weight-icon">
+            ⚖
+          </div>
+
+          <div class="consultar-estadisticas-weight-info">
+            <h2>Peso actual</h2>
+            <p>Último registro guardado</p>
+          </div>
+
+          <div class="consultar-estadisticas-weight-value">
+            <span id="weight-value">-</span> <span>kg</span>
+          </div>
+        </article>
+
+        <article class="consultar-estadisticas-box">
+
+          <div class="consultar-estadisticas-box-header">
+            <div class="consultar-estadisticas-box-icon">
+              🍽️
+            </div>
+
+            <div>
+              <h2>Alimentación semanal</h2>
+              <p>Comidas completadas durante la semana</p>
+            </div>
+          </div>
+
+          <div class="consultar-estadisticas-table-wrapper">
+            <table class="consultar-estadisticas-table">
+              <thead>
+                <tr>
+                  <th>Comida</th>
+                  <th>Lun</th>
+                  <th>Mar</th>
+                  <th>Mié</th>
+                  <th>Jue</th>
+                  <th>Vie</th>
+                  <th>Sáb</th>
+                  <th>Dom</th>
+                </tr>
+              </thead>
+
+              <tbody id="meal-log-tbody">
+                <tr id="meal-row-desayuno">
+                  <td>Desayuno</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-media-manana">
+                  <td>Media mañana</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-almuerzo">
+                  <td>Almuerzo</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-merienda">
+                  <td>Merienda</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-row-cena">
+                  <td>Cena</td>
+                  <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                </tr>
+                <tr id="meal-log-total-row" class="consultar-estadisticas-total-row">
+                  <td>Total</td>
+                  <td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td><td>0/5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </article>
+
+        <article class="consultar-estadisticas-box">
+
+          <div class="consultar-estadisticas-box-header">
+            <div class="consultar-estadisticas-box-icon">
+              🏋️
+            </div>
+
+            <div>
+              <h2>Entrenamiento semanal</h2>
+              <p>Rutinas completadas durante la semana</p>
+            </div>
+          </div>
+
+          <div class="consultar-estadisticas-table-wrapper">
+  <table class="consultar-estadisticas-table">
+    <thead>
+      <tr>
+        <th>Entrenamiento</th>
+        <th>Lun</th>
+        <th>Mar</th>
+        <th>Mié</th>
+        <th>Jue</th>
+        <th>Vie</th>
+        <th>Sáb</th>
+        <th>Dom</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr id="training-status-row">
+        <td>Rutina completa</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+
+      <tr id="training-total-row" class="consultar-estadisticas-total-row">
+        <td>Total</td>
+        <td>0/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
+        <td>0/1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ 
+
+        </article>
+
+        <article class="consultar-estadisticas-summary">
+
+  <div class="consultar-estadisticas-summary-item">
+    <span>Comidas completadas</span>
+    <strong id="meal-summary-value">0</strong>
+  </div>
+
+  <div class="consultar-estadisticas-summary-item">
+    <span>Rutinas completadas</span>
+    <strong id="training-summary-value">0/7</strong>
+  </div>
+
+  <div class="consultar-estadisticas-summary-item">
+    <span>Peso actual</span>
+    <strong id="weight-summary-value">-</strong>
+  </div>
+
+</article>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script type="module">
+    import { Container } from '../src/container.js';
+    const container = new Container({ http: { url: import.meta.env.VITE_BACKEND_ENDPOINT } });
+    container.consultarEstadisticasController.init();
+  </script>
+</body>
+</html>

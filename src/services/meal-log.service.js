@@ -5,7 +5,7 @@ export class MealLogService {
   }
 
   /**
-   * @param {{ userId?: number }} getMealLogConfig
+   * @param {{ from?: string, to?: string, date?: string }} getMealLogConfig
    * @returns {Promise<object[]>}
    */
   get(getMealLogConfig) {
@@ -29,7 +29,7 @@ export class MealLogService {
   }
 
   /**
-   * @param {{ id: number, userId?: number, dishId?: number, quantity?: number }} updateMealLogConfig
+   * @param {{ id: number, dishId?: number, quantity?: number }} updateMealLogConfig
    * @returns {Promise<object>}
    */
   update(updateMealLogConfig) {
