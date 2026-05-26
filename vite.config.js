@@ -16,6 +16,8 @@ export default defineConfig({
         editarPerfil: resolve(__dirname, 'templates/editar-perfil.html'),
         calorias: resolve(__dirname, 'templates/calorias.html'),
         estadisticas: resolve(__dirname, 'templates/estadisticas.html'),
+        actualizarPeso: resolve(__dirname, 'templates/actualizar-peso.html'),
+        consultarEstadisticas: resolve(__dirname, 'templates/consultar-estadisticas.html'),
       }
     }
   }
